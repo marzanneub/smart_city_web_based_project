@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Photos/Self/logo.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="index_style2.css">
     <title>Smart city</title>
 </head>
 <body>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <div class="main">
         <header class="header">
             <img src="Photos/Self/1.jpg" alt="">
             <img src="Photos/Self/2.jpg" alt="">
             <img src="Photos/Self/3.jpg" alt="">
         </header>
-        <script src="js/bootstrap.bundle.min.js"></script>
         <script>
             const images = document.querySelectorAll('.header img');
             let currentIndex = 0;
@@ -37,7 +37,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Emergencies</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Hospitals</a></li>
@@ -68,7 +67,6 @@
                 </div>
             </div>
         </nav>
-        
     </div>
 </body>
 </html>

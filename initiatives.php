@@ -100,7 +100,7 @@
                     </div>
                     <div class="mb-3">
                         <select class="form-select" name="init_id" aria-label="Default select example">
-                            <option value="0">--Select title--</option>
+                            <option value=0>--Select title--</option>
                             <?php
                                 $sql = "SELECT * FROM initiative ORDER BY init_id DESC";
                                 $sql_query = mysqli_query($con, $sql);
@@ -111,12 +111,15 @@
                             ?>
                         </select>
                     </div>
-                    <div class="button"><button class="btn btn-primary">Update</button></div>
-                    <?php if(isset($_GET['update_message']) && $_GET['update_message']==1) { ?>
-			            <div class="message1"><?php echo "Successfully updated!"; ?></div>
+                    <div class="button"><button class="btn btn-primary">Delete</button></div>
+                    <?php if(isset($_GET['delete_message']) && $_GET['delete_message']==1) { ?>
+			            <div class="message1"><?php echo "Successfully deleted!"; ?></div>
                     <?php } ?>
-                    <?php if(isset($_GET['update_message']) && $_GET['update_message']==0) { ?>
-			            <div class="message2"><?php echo "Nothing Updated!"; ?></div>
+                    <?php if(isset($_GET['delete_message']) && $_GET['delete_message']==0) { ?>
+			            <div class="message2"><?php echo "Error!"; ?></div>
+                    <?php } ?>
+                    <?php if(isset($_GET['delete_message']) && $_GET['delete_message']==2) { ?>
+			            <div class="message2"><?php echo "Please select a title!"; ?></div>
                     <?php } ?>
                 </form>
             </div>

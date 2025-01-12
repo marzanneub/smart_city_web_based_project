@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Photos/Self/logo.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="login_style.css">
+    <link rel="stylesheet" href="login_style2.css">
     <title>Login</title>
 </head>
 <body>
 <?php
 require('auto_login.php');
 ?>
-    <div class="upper_buttons"><form action="index.php"><button class="btn btn-primary" type="submit">Back</button></form></div>
+    <div class="upper_buttons"><a href="index.php" class="btn btn-primary">Back</a></div>
     <div class="main">
         <form action="login_back.php" method="POST">
             <div class="form-group">
