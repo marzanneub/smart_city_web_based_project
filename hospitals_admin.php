@@ -99,10 +99,14 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <select class="form-select" name="p_id" aria-label="Default select example">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" name="location_id" aria-label="Default select example">
                             <option value="0">--Select new location--</option>
                             <?php
-                                $sql = "SELECT * FROM locations name ASC";
+                                $sql = "SELECT * FROM locations ORDER BY name ASC";
                                 $sql_query = mysqli_query($con, $sql);
                                 while($row = mysqli_fetch_assoc($sql_query))
                                 {
@@ -110,10 +114,6 @@
                                 }
                             ?>
                         </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Phone number</label>
@@ -131,24 +131,27 @@
 			            <div class="message2"><?php echo "Nothing Updated!"; ?></div>
                     <?php } ?>
                     <?php if(isset($_GET['update_message']) && $_GET['update_message']==2) { ?>
-			            <div class="message2"><?php echo "Please select a title!"; ?></div>
+			            <div class="message2"><?php echo "Please select a hospital!"; ?></div>
+                    <?php } ?>
+                    <?php if(isset($_GET['update_message']) && $_GET['update_message']==3) { ?>
+			            <div class="message2"><?php echo "Phone number is invalid!"; ?></div>
                     <?php } ?>
                 </form>
             </div>
             <div class="main">
-                <form action="delete_initiative_back.php" method="POST" class="form">
+                <form action="delete_hospital_back.php" method="POST" class="form">
                     <div class="mb-3">
-                        <a class="navbar-brand">Delete Initiative</a>
+                        <a class="navbar-brand">Delete Hospital</a>
                     </div>
                     <div class="mb-3">
-                        <select class="form-select" name="init_id" aria-label="Default select example">
-                            <option value=0>--Select title--</option>
+                        <select class="form-select" name="p_id" aria-label="Default select example">
+                            <option value=0>-Select hospital--</option>
                             <?php
-                                $sql = "SELECT * FROM initiative ORDER BY init_id DESC";
+                                $sql = "SELECT * FROM place WHERE p_t_id='1' ORDER BY p_name ASC";
                                 $sql_query = mysqli_query($con, $sql);
                                 while($row = mysqli_fetch_assoc($sql_query))
                                 {
-                                    echo "<option value=" . $row["init_id"] . ">" . $row["title"] . "</option>";
+                                    echo "<option value=" . $row["p_id"] . ">" . $row["p_name"] . "</option>";
                                 }
                             ?>
                         </select>
@@ -161,7 +164,7 @@
 			            <div class="message2"><?php echo "Error!"; ?></div>
                     <?php } ?>
                     <?php if(isset($_GET['delete_message']) && $_GET['delete_message']==2) { ?>
-			            <div class="message2"><?php echo "Please select a title!"; ?></div>
+			            <div class="message2"><?php echo "Please select a hospital!"; ?></div>
                     <?php } ?>
                 </form>
             </div>

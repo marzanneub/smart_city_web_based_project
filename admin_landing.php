@@ -30,7 +30,18 @@
                     <td scope="row"><a href="initiatives.php" class="btn btn-primary">Initiatives</a></td>
                 </tr>
                 <tr>
-                    <td scope="row"><a href="index.php" class="btn btn-primary">Back</a></td>
+                    <td scope="row"><a href="locations.php" class="btn btn-primary">Locations</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="btn btn-primary"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Emergencies</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="hospitals_admin.php">Hospitals</a></li>
+                                <li><a class="dropdown-item" href="#">Fire stations</a></li>
+                                <li><a class="dropdown-item" href="#">Police stations</a></li>
+                            </ul>
+                        </div>
+</td>
                 </tr>
             </tbody>
         </table>

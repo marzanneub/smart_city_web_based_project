@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Photos/Self/logo.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="index_style2.css">
-    <title>Smart city</title>
+    <link rel="stylesheet" href="index_style3.css">
+    <title>Smart City</title>
 </head>
 <body>
+<?php
+require('connect.php');
+?>
     <script src="js/bootstrap.bundle.min.js"></script>
     <div class="main">
         <header class="header">
@@ -49,6 +52,7 @@
                                 <li><a class="dropdown-item" href="#">Atms</a></li>
                                 <li><a class="dropdown-item" href="#">Beauty salons</a></li>
                                 <li><a class="dropdown-item" href="#">Gas</a></li>
+                                <li><a class="dropdown-item" href="#">Grocery stores</a></li>
                                 <li><a class="dropdown-item" href="#">Hotels</a></li>
                                 <li><a class="dropdown-item" href="#">Pharmacies</a></li>
                             </ul>
@@ -67,6 +71,51 @@
                 </div>
             </div>
         </nav>
+
+        <div class="item">
+          <h1>Our initiatives</h1>
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <?php
+                    $sql = "SELECT * FROM initiative";
+                    $sql_query = mysqli_query($con, $sql);
+                    $found = mysqli_num_rows($sql_query);
+                    $x = 0;
+                    $k=0;
+                    while($k<$found)
+                    {
+                        $x = 0;
+                        echo '<div class="carousel-item active"><div class="cards-wrapper">';
+                        while($x<3)
+                        {
+                            if(!$row = mysqli_fetch_assoc($sql_query)) break;
+                            echo '<div class="card" style="width: 18rem;">
+                                        <img src="Photos/Initiatives/' . $row['image'] .'" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">' . $row['title'] .'</h5>
+                                        <p class="card-text">' . $row['description'] .'</p>
+                                    </div>
+                                    </div>
+                            ';
+                            $x++;
+                            $k++;
+                        }
+                        echo '</div></div>';
+                    }
+                ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        
     </div>
 </body>
 </html>

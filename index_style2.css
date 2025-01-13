@@ -6,7 +6,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
 .main {
@@ -20,7 +19,8 @@ body {
 
 .header {
     height: 260px;
-    width: 1148px;
+    width: 100%;
+    max-width: 1148px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -40,3 +40,34 @@ body {
 .header img.active {
     opacity: 1;
 }
+
+nav {
+    width: 100%;
+    max-width: 1148px;
+    margin: 0 auto;
+}
+
+.item {
+    width: 100%;
+    max-width: 1148px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cards-wrapper {
+    display: flex;
+    margin: 1em auto;
+    justify-content: center;
+    gap: 100px;
+}
+
+.card {
+    flex: 1;
+    max-width: 18rem;
+}
+
+.card-img-top {
+    height: 25vh;
+    object-fit: cover;
+}
+
