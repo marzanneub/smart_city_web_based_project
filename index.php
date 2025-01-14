@@ -42,9 +42,9 @@ require('connect.php');
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Emergencies</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Hospitals</a></li>
-                                <li><a class="dropdown-item" href="#">Fire stations</a></li>
-                                <li><a class="dropdown-item" href="#">Police stations</a></li>
+                                <li><a class="dropdown-item" href="hospitals.php">Hospitals</a></li>
+                                <li><a class="dropdown-item" href="fire_stations.php">Fire stations</a></li>
+                                <li><a class="dropdown-item" href="police_stations.php">Police stations</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>

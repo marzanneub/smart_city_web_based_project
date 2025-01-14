@@ -37,8 +37,8 @@
                         <div class="btn btn-primary"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Emergencies</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="hospitals_admin.php">Hospitals</a></li>
-                                <li><a class="dropdown-item" href="#">Fire stations</a></li>
-                                <li><a class="dropdown-item" href="#">Police stations</a></li>
+                                <li><a class="dropdown-item" href="fire_stations_admin.php">Fire stations</a></li>
+                                <li><a class="dropdown-item" href="police_stations_admin.php">Police stations</a></li>
                             </ul>
                         </div>
 </td>

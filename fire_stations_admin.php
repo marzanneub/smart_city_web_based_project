@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospitals</title>
+    <title>Fire Stations</title>
     <link rel="icon" href="Photos/Self/logo.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo">
             <img src="Photos/Self/logo.png" class="navbar-brand" height="80px">
-            <b class="navbar-brand">Hospitals</b>
+            <b class="navbar-brand">Fire Stations</b>
         </div>
         <div class="upper_buttons">
             <a href="admin_landing.php" class="btn btn-primary">Back</a>
@@ -36,9 +36,9 @@
     <nav class="navbar">
         <div class="container-fluid justify-content-around">
             <div class="main">
-                <form action="add_hospital_back.php" method="POST" class="form">
+                <form action="add_fire_station_back.php" method="POST" class="form">
                     <div class="mb-3">
-                        <a class="navbar-brand">Add Hospital</a>
+                        <a class="navbar-brand">Add Fire Station</a>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -81,15 +81,15 @@
                 </form>
             </div>
             <div class="main">
-                <form action="update_hospital_back.php" method="POST" class="form">
+                <form action="update_fire_station_back.php" method="POST" class="form">
                     <div class="mb-3">
-                        <a class="navbar-brand">Update Hospital</a>
+                        <a class="navbar-brand">Update Fire Station</a>
                     </div>
                     <div class="mb-3">
                         <select class="form-select" name="p_id" aria-label="Default select example">
-                            <option value="0">--Select hospital--</option>
+                            <option value="0">--Select fire station--</option>
                             <?php
-                                $sql = "SELECT * FROM place WHERE p_t_id='1' ORDER BY p_name ASC";
+                                $sql = "SELECT * FROM place WHERE p_t_id='2' ORDER BY p_name ASC";
                                 $sql_query = mysqli_query($con, $sql);
                                 while($row = mysqli_fetch_assoc($sql_query))
                                 {
@@ -131,7 +131,7 @@
 			            <div class="message2"><?php echo "Nothing Updated!"; ?></div>
                     <?php } ?>
                     <?php if(isset($_GET['update_message']) && $_GET['update_message']==2) { ?>
-			            <div class="message2"><?php echo "Please select a hospital!"; ?></div>
+			            <div class="message2"><?php echo "Please select a fire station!"; ?></div>
                     <?php } ?>
                     <?php if(isset($_GET['update_message']) && $_GET['update_message']==3) { ?>
 			            <div class="message2"><?php echo "Phone number is invalid!"; ?></div>
@@ -139,15 +139,15 @@
                 </form>
             </div>
             <div class="main">
-                <form action="delete_hospital_back.php" method="POST" class="form">
+                <form action="delete_fire_station_back.php" method="POST" class="form">
                     <div class="mb-3">
-                        <a class="navbar-brand">Delete Hospital</a>
+                        <a class="navbar-brand">Delete Fire Station</a>
                     </div>
                     <div class="mb-3">
                         <select class="form-select" name="p_id" aria-label="Default select example">
-                            <option value=0>--Select hospital--</option>
+                            <option value=0>--Select fire station--</option>
                             <?php
-                                $sql = "SELECT * FROM place WHERE p_t_id='1' ORDER BY p_name ASC";
+                                $sql = "SELECT * FROM place WHERE p_t_id='2' ORDER BY p_name ASC";
                                 $sql_query = mysqli_query($con, $sql);
                                 while($row = mysqli_fetch_assoc($sql_query))
                                 {
@@ -164,7 +164,7 @@
 			            <div class="message2"><?php echo "Error!"; ?></div>
                     <?php } ?>
                     <?php if(isset($_GET['delete_message']) && $_GET['delete_message']==2) { ?>
-			            <div class="message2"><?php echo "Please select a hospital!"; ?></div>
+			            <div class="message2"><?php echo "Please select a fire station!"; ?></div>
                     <?php } ?>
                 </form>
             </div>
@@ -183,7 +183,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT * FROM place JOIN locations ON place.location_id=locations.location_id WHERE p_t_id='1'";
+                            $sql = "SELECT * FROM place JOIN locations ON place.location_id=locations.location_id WHERE p_t_id='2'";
                             $sql_query = mysqli_query($con, $sql);
                             while($row = mysqli_fetch_assoc($sql_query))
                             {
