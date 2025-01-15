@@ -10,7 +10,10 @@
 </head>
 <body>
 <?php
-require('connect.php');
+    require('connect.php');
+    $sql2 = "SELECT * FROM admin WHERE login='1'";
+    $sql_query2 = mysqli_query($con, $sql2);
+    $found2 = mysqli_num_rows($sql_query2);
 ?>
     <script src="js/bootstrap.bundle.min.js"></script>
     <div class="main">
@@ -49,25 +52,24 @@ require('connect.php');
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Atms</a></li>
-                                <li><a class="dropdown-item" href="#">Beauty salons</a></li>
-                                <li><a class="dropdown-item" href="#">Gas</a></li>
-                                <li><a class="dropdown-item" href="#">Grocery stores</a></li>
-                                <li><a class="dropdown-item" href="#">Hotels</a></li>
-                                <li><a class="dropdown-item" href="#">Pharmacies</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=4">Atms</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=5">Restaurants</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=6">Beauty salons</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=7">Gas</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=8">Grocery stores</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=9">Hotels</a></li>
+                                <li><a class="dropdown-item" href="services.php?p_t_id=10">Pharmacies</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Things to do</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Attractions</a></li>
-                                <li><a class="dropdown-item" href="#">Gyms</a></li>
-                                <li><a class="dropdown-item" href="#">Parks</a></li>
-                                <li><a class="dropdown-item" href="#">Libraries</a></li>
-                                <li><a class="dropdown-item" href="#">Museums</a></li>
+                                <li><a class="dropdown-item" href="things_to_do.php?p_t_id=11">Attractions</a></li>
+                                <li><a class="dropdown-item" href="things_to_do.php?p_t_id=13">Parks</a></li>
+                                <li><a class="dropdown-item" href="things_to_do.php?p_t_id=15">Museums</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form action="login.php"><button class="btn btn-primary" type="submit">Login</button></form>
+                    <form action="login.php"><button class="btn btn-primary" type="submit"><?php if($found2>0) echo "Admin Panel"; else echo "Login";?></button></form>
                 </div>
             </div>
         </nav>

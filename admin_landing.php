@@ -41,7 +41,33 @@
                                 <li><a class="dropdown-item" href="police_stations_admin.php">Police stations</a></li>
                             </ul>
                         </div>
-</td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="btn btn-primary"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=4">Atms</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=5">Restaurants</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=6">Beauty salons</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=7">Gas</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=8">Grocery stores</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=9">Hotels</a></li>
+                                <li><a class="dropdown-item" href="services_admin.php?p_t_id=10">Pharmacies</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="btn btn-primary"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Things to do</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="things_to_do_admin.php?p_t_id=11">Attractions</a></li>
+                                <li><a class="dropdown-item" href="things_to_do_admin.php?p_t_id=13">Parks</a></li>
+                                <li><a class="dropdown-item" href="things_to_do_admin.php?p_t_id=15">Museums</a></li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>

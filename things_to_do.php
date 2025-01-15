@@ -16,7 +16,7 @@
     $p_t_id = $_GET['p_t_id'];
     $sql2 = "SELECT * FROM place_type WHERE p_t_id='$p_t_id'";
     $sql_query2 = mysqli_query($con, $sql2);
-    $row2 = mysqli_fetch_assoc($sql_query2)
+    $row2 = mysqli_fetch_assoc($sql_query2);
 ?>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
@@ -57,10 +57,12 @@
                                     <div class="card-body">
                                         <h5 class="card-title">' . $row['p_name'] .'</h5>
                                         <p class="card-text">' . $row['description'] .'</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                        </svg>
-                                        <h6 class="card-text">' . $row['name'] .'</h6>
+                                        <div class="footer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                            </svg>
+                                            <h6 class="card-text">' . $row['name'] .'</h6>
+                                        </div>
                                     </div>
                                 </div>
                             ';
